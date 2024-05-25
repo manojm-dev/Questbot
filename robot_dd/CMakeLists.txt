@@ -10,7 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(xacro REQUIRED)
 
 install(
-  DIRECTORY launch description
+  DIRECTORY launch config description
   DESTINATION share/${PROJECT_NAME}
 )
 

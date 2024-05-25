@@ -16,5 +16,9 @@
   <material name="blue">
     <color rgba="0.2 0.2 1 1" />
   </material>
+
+  <material name="red">
+    <color rgba="1 0 0 1" />
+  </material> 
   
 </robot>
