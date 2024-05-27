@@ -1,22 +1,12 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot_dd">
- 
-  <!-- ROBOT URDF-->
-  <xacro:include filename="robot_core.xacro"/>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
 
-  <!-- Gazebo Controller -->
-  <!-- <xacro:include filename="gazebo_control.xacro"/> -->
+    <xacro:include filename="robot_core.xacro" />
 
-  <!-- ROS2 Control -->
-  <xacro:include filename="ros2_control.xacro"/>
-
-  <!-- Lidar 2D -->
-  <xacro:include filename="lidar.xacro"/>
-
-  <!-- Camera -->
-  <!-- <xacro:include filename="camera.xacro"/> -->
-
-  <!-- Depth Camera -->
-  <!-- <xacro:include filename="depth_camera.xacro"/> -->
-  
+    <!-- <xacro:include filename="gazebo_control.xacro" /> -->
+    <xacro:include filename="ros2_control.xacro" />
+    <xacro:include filename="lidar.xacro" />
+    <xacro:include filename="camera.xacro" />
+    <!-- <xacro:include filename="depth_camera.xacro" /> -->
+    
 </robot>

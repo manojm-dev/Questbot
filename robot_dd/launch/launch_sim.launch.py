@@ -15,7 +15,7 @@ def generate_launch_description():
   # Pkg name & rviz file path
   pkg_name = 'robot_dd'
   rviz_subpath = 'config/view_robot.rviz'
-  world_subpath = 'world/pathway.world'
+  world_subpath = 'world/willowgarage.world'
 
 
   # Get pkg shares dir
