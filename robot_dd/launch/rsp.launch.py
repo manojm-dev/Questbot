@@ -8,18 +8,23 @@ def generate_launch_description():
 
   # pkg name and path to xacro file
   pkg_name = 'robot_dd'
-  file_subpath = 'description/robot.urdf.xacro'
+  xacro_subpath = 'description/robot.urdf.xacro'
+
+  # Getting pkg share dir
+  pkg_robot_dd = os.path.join(get_package_share_directory(pkg_name))
+
+  # Getting files
+  xacro_file = os.path.join(pkg_robot_dd, xacro_subpath)
 
   # use xacro to process the file
-  xacro_file = os.path.join(get_package_share_directory(pkg_name), file_subpath)
-  robot_description_raw = xacro.process_file(xacro_file).toxml()
+  urdf_file = xacro.process_file(xacro_file).toxml()
 
   # rsp
   robot_state_publisher_node = Node(
     package="robot_state_publisher",
     executable="robot_state_publisher",
     output="screen",
-    parameters=[{'robot_description': robot_description_raw}]
+    parameters=[{'robot_description': urdf_file}]
   )
 
   return LaunchDescription([
