@@ -21,7 +21,7 @@
             </geometry>
         </collision>
     </link>
-
+    
 
     <joint name="camera_optical_joint" type="fixed">
         <parent link="camera_link"/>

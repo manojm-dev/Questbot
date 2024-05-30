@@ -86,7 +86,6 @@ def generate_launch_description():
   ld = LaunchDescription()
 
   ld.add_action(declare_world)
-
   ld.add_action(robot_state_publisher)
   ld.add_action(gazebo_server)
   ld.add_action(gazebo_client)
