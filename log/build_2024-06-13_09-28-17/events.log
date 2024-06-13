@@ -1,0 +1,101 @@
+[0.000000] (-) TimerEvent: {}
+[0.000570] (robot_dd) JobQueued: {'identifier': 'robot_dd', 'dependencies': OrderedDict()}
+[0.000975] (robot_dd) JobStarted: {'identifier': 'robot_dd'}
+[0.021881] (robot_dd) JobProgress: {'identifier': 'robot_dd', 'progress': 'cmake'}
+[0.022533] (robot_dd) Command: {'cmd': ['/usr/bin/cmake', '/root/ws/src/robot_dd', '-DCMAKE_BUILD_TYPE=RelWithDebInfo', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/root/ws/src/install/robot_dd'], 'cwd': '/root/ws/src/build/robot_dd', 'env': OrderedDict([('VSCODE_CWD', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573'), ('VSCODE_NLS_CONFIG', '{"locale":"en","osLocale":"en","availableLanguages":{}}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('HOSTNAME', 'localhost.localdomain'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573/bin/helpers/browser.sh'), ('HOME', '/root'), ('TERM_PROGRAM_VERSION', '1.90.0'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-af5b9038-891c-4acf-a067-71bb4eecf05b.sock'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL', '1'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573/node'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('VSCODE_L10N_BUNDLE_LOCATION', ''), ('COLCON_PREFIX_PATH', '/root/ws/install'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-55292cd8-b61d-412e-8a72-b5d18faea2ae.sock'), ('_', '/usr/bin/colcon'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo/../../share/gazebo-11/models:'), ('ROS_LOCALHOST_ONLY', '1'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573/bin/remote-cli:/opt/venv/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('VSCODE_AMD_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('VSCODE_AGENT_FOLDER', '/root/.vscode-server'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-55292cd8-b61d-412e-8a72-b5d18faea2ae.sock","/tmp/.X11-unix/X4","/root/.gnupg/S.gpg-agent"]'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('XAUTHORITY', '/root/.XAuthority'), ('LS_COLORS', ''), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-ade4700a78.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-55292cd8-b61d-412e-8a72-b5d18faea2ae.sock'), ('ROS_DOMAIN_ID', '3'), ('AMENT_PREFIX_PATH', '/root/ws/install/robot_dd:/opt/ros/humble'), ('REMOTE_CONTAINERS_DISPLAY_SOCK', '/tmp/.X11-unix/X4'), ('SHELL', '/bin/bash'), ('ELECTRON_RUN_AS_NODE', '1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo/../../share/gazebo-11:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/root/ws/src/build/robot_dd'), ('LC_ALL', 'C.UTF-8'), ('GAZEBO_PLUGIN_PATH', '/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/ws/install/robot_dd:/opt/ros/humble')]), 'shell': False}
+[0.080468] (-) TimerEvent: {}
+[0.181406] (-) TimerEvent: {}
+[0.283129] (-) TimerEvent: {}
+[0.290119] (robot_dd) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.382046] (-) TimerEvent: {}
+[0.451509] (robot_dd) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.469092] (robot_dd) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.482188] (-) TimerEvent: {}
+[0.582593] (-) TimerEvent: {}
+[0.586687] (robot_dd) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.606501] (robot_dd) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.607346] (robot_dd) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.609175] (robot_dd) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.616243] (robot_dd) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.682984] (-) TimerEvent: {}
+[0.783629] (robot_dd) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.784097] (-) TimerEvent: {}
+[0.801344] (robot_dd) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.801789] (robot_dd) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.802647] (robot_dd) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.810427] (robot_dd) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.884251] (-) TimerEvent: {}
+[0.984654] (-) TimerEvent: {}
+[1.085038] (-) TimerEvent: {}
+[1.185362] (-) TimerEvent: {}
+[1.285766] (-) TimerEvent: {}
+[1.386142] (-) TimerEvent: {}
+[1.486589] (-) TimerEvent: {}
+[1.521719] (robot_dd) StdoutLine: {'line': b'-- Found Python3: /opt/venv/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.586710] (-) TimerEvent: {}
+[1.641769] (robot_dd) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.686854] (-) TimerEvent: {}
+[1.740655] (robot_dd) StdoutLine: {'line': b'-- Found xacro: 2.0.8 (/opt/ros/humble/share/xacro/cmake)\n'}
+[1.787012] (-) TimerEvent: {}
+[1.887471] (-) TimerEvent: {}
+[1.927755] (robot_dd) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.937828] (robot_dd) StdoutLine: {'line': b'-- Generating done\n'}
+[1.939513] (robot_dd) StdoutLine: {'line': b'-- Build files have been written to: /root/ws/src/build/robot_dd\n'}
+[1.945795] (robot_dd) CommandEnded: {'returncode': 0}
+[1.946752] (robot_dd) JobProgress: {'identifier': 'robot_dd', 'progress': 'build'}
+[1.947853] (robot_dd) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ws/src/build/robot_dd', '--', '-j4', '-l4'], 'cwd': '/root/ws/src/build/robot_dd', 'env': OrderedDict([('VSCODE_CWD', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573'), ('VSCODE_NLS_CONFIG', '{"locale":"en","osLocale":"en","availableLanguages":{}}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('HOSTNAME', 'localhost.localdomain'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573/bin/helpers/browser.sh'), ('HOME', '/root'), ('TERM_PROGRAM_VERSION', '1.90.0'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-af5b9038-891c-4acf-a067-71bb4eecf05b.sock'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL', '1'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573/node'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('VSCODE_L10N_BUNDLE_LOCATION', ''), ('COLCON_PREFIX_PATH', '/root/ws/install'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-55292cd8-b61d-412e-8a72-b5d18faea2ae.sock'), ('_', '/usr/bin/colcon'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo/../../share/gazebo-11/models:'), ('ROS_LOCALHOST_ONLY', '1'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573/bin/remote-cli:/opt/venv/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('VSCODE_AMD_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('VSCODE_AGENT_FOLDER', '/root/.vscode-server'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-55292cd8-b61d-412e-8a72-b5d18faea2ae.sock","/tmp/.X11-unix/X4","/root/.gnupg/S.gpg-agent"]'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('XAUTHORITY', '/root/.XAuthority'), ('LS_COLORS', ''), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-ade4700a78.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-55292cd8-b61d-412e-8a72-b5d18faea2ae.sock'), ('ROS_DOMAIN_ID', '3'), ('AMENT_PREFIX_PATH', '/root/ws/install/robot_dd:/opt/ros/humble'), ('REMOTE_CONTAINERS_DISPLAY_SOCK', '/tmp/.X11-unix/X4'), ('SHELL', '/bin/bash'), ('ELECTRON_RUN_AS_NODE', '1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo/../../share/gazebo-11:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/root/ws/src/build/robot_dd'), ('LC_ALL', 'C.UTF-8'), ('GAZEBO_PLUGIN_PATH', '/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/ws/install/robot_dd:/opt/ros/humble')]), 'shell': False}
+[1.987650] (-) TimerEvent: {}
+[2.011496] (robot_dd) CommandEnded: {'returncode': 0}
+[2.051262] (robot_dd) JobProgress: {'identifier': 'robot_dd', 'progress': 'install'}
+[2.066441] (robot_dd) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/ws/src/build/robot_dd'], 'cwd': '/root/ws/src/build/robot_dd', 'env': OrderedDict([('VSCODE_CWD', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573'), ('VSCODE_NLS_CONFIG', '{"locale":"en","osLocale":"en","availableLanguages":{}}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('HOSTNAME', 'localhost.localdomain'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573/bin/helpers/browser.sh'), ('HOME', '/root'), ('TERM_PROGRAM_VERSION', '1.90.0'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-af5b9038-891c-4acf-a067-71bb4eecf05b.sock'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL', '1'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573/node'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('VSCODE_L10N_BUNDLE_LOCATION', ''), ('COLCON_PREFIX_PATH', '/root/ws/install'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-55292cd8-b61d-412e-8a72-b5d18faea2ae.sock'), ('_', '/usr/bin/colcon'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo/../../share/gazebo-11/models:'), ('ROS_LOCALHOST_ONLY', '1'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/vscode/vscode-server/bin/linux-x64/89de5a8d4d6205e5b11647eb6a74844ca23d2573/bin/remote-cli:/opt/venv/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('VSCODE_AMD_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('VSCODE_AGENT_FOLDER', '/root/.vscode-server'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-55292cd8-b61d-412e-8a72-b5d18faea2ae.sock","/tmp/.X11-unix/X4","/root/.gnupg/S.gpg-agent"]'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('XAUTHORITY', '/root/.XAuthority'), ('LS_COLORS', ''), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-ade4700a78.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-55292cd8-b61d-412e-8a72-b5d18faea2ae.sock'), ('ROS_DOMAIN_ID', '3'), ('AMENT_PREFIX_PATH', '/root/ws/install/robot_dd:/opt/ros/humble'), ('REMOTE_CONTAINERS_DISPLAY_SOCK', '/tmp/.X11-unix/X4'), ('SHELL', '/bin/bash'), ('ELECTRON_RUN_AS_NODE', '1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo/../../share/gazebo-11:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/root/ws/src/build/robot_dd'), ('LC_ALL', 'C.UTF-8'), ('GAZEBO_PLUGIN_PATH', '/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/ws/install/robot_dd:/opt/ros/humble')]), 'shell': False}
+[2.083883] (robot_dd) StdoutLine: {'line': b'-- Install configuration: "RelWithDebInfo"\n'}
+[2.084213] (robot_dd) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[2.085434] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/launch/display.launch.py\n'}
+[2.089922] (-) TimerEvent: {}
+[2.102167] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/launch/launch_sim.launch.py\n'}
+[2.116646] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/launch/launch_sim2.launch.py\n'}
+[2.134074] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/launch/rsp.launch.py\n'}
+[2.148692] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/config/gz_bridge_params.yaml\n'}
+[2.164468] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/config/mapper_params_online_async.yaml\n'}
+[2.178277] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/config/my_controllers.yaml\n'}
+[2.190050] (-) TimerEvent: {}
+[2.191729] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/config/view_robot.rviz\n'}
+[2.208351] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/description/control/gazebo2_control.xacro\n'}
+[2.223181] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/description/control/gazebo_control.xacro\n'}
+[2.238050] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/description/control/ros2_control.xacro\n'}
+[2.252376] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/description/macros/inertial.xacro\n'}
+[2.267278] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/description/macros/wheel.xacro\n'}
+[2.280596] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/description/material.xacro\n'}
+[2.290159] (-) TimerEvent: {}
+[2.294336] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/description/robot.xacro\n'}
+[2.308648] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/description/robot_model.xacro\n'}
+[2.324202] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/description/sensors/camera.xacro\n'}
+[2.337908] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/description/sensors/depth_camera.xacro\n'}
+[2.352326] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/description/sensors/lidar.xacro\n'}
+[2.368377] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/description/test\n'}
+[2.382937] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/world/empty.world\n'}
+[2.390310] (-) TimerEvent: {}
+[2.397549] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/world/house.world\n'}
+[2.413977] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/world/willowgarage.world\n'}
+[2.432267] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/rviz/display.rviz\n'}
+[2.446621] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/ament_index/resource_index/package_run_dependencies/robot_dd\n'}
+[2.462863] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/ament_index/resource_index/parent_prefix_path/robot_dd\n'}
+[2.477590] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/environment/ament_prefix_path.sh\n'}
+[2.490459] (-) TimerEvent: {}
+[2.491004] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/environment/ament_prefix_path.dsv\n'}
+[2.506569] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/environment/path.sh\n'}
+[2.524134] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/environment/path.dsv\n'}
+[2.537732] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/local_setup.bash\n'}
+[2.551983] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/local_setup.sh\n'}
+[2.566911] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/local_setup.zsh\n'}
+[2.580791] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/local_setup.dsv\n'}
+[2.590603] (-) TimerEvent: {}
+[2.596866] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/package.dsv\n'}
+[2.615897] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/ament_index/resource_index/packages/robot_dd\n'}
+[2.632590] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/cmake/robot_ddConfig.cmake\n'}
+[2.647334] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/cmake/robot_ddConfig-version.cmake\n'}
+[2.661120] (robot_dd) StdoutLine: {'line': b'-- Symlinking: /root/ws/src/install/robot_dd/share/robot_dd/package.xml\n'}
+[2.678157] (robot_dd) CommandEnded: {'returncode': 0}
+[2.691238] (-) TimerEvent: {}
+[2.749773] (robot_dd) JobEnded: {'identifier': 'robot_dd', 'rc': 0}
+[2.751346] (-) EventReactorShutdown: {}

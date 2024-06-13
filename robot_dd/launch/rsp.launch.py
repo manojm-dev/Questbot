@@ -8,7 +8,7 @@ def generate_launch_description():
 
   # pkg name and path to xacro file
   pkg_name = 'robot_dd'
-  xacro_subpath = 'description/robot.urdf.xacro'
+  xacro_subpath = 'description/robot.xacro'
 
   # Getting pkg share dir
   pkg_robot_dd = os.path.join(get_package_share_directory(pkg_name))

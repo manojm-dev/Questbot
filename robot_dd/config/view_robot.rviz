@@ -52,12 +52,10 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
+        base_footprint:
+          Value: true
         base_link:
           Value: true
-        camera_link:
-          Value: false
-        camera_link_optical:
-          Value: false
         caster_wheel:
           Value: false
         chassis:
@@ -79,20 +77,20 @@ Visualization Manager:
       Show Names: true
       Tree:
         map:
-          odom:
-            base_link:
-              chassis:
-                camera_link:
-                  camera_link_optical:
-                    {}
-                caster_wheel:
-                  {}
-                laser_frame:
-                  {}
-              left_wheel:
+          {}
+        odom:
+          base_link:
+            base_footprint:
+              {}
+            chassis:
+              caster_wheel:
                 {}
-              right_wheel:
+              laser_frame:
                 {}
+            left_wheel:
+              {}
+            right_wheel:
+              {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -113,16 +111,11 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera_link_optical:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -238,7 +231,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: odom
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
@@ -281,7 +274,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/ThirdPersonFollower
-      Distance: 6.4969162940979
+      Distance: 8.182915687561035
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -296,10 +289,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5947971940040588
+      Pitch: 0.9397972822189331
       Target Frame: <Fixed Frame>
       Value: ThirdPersonFollower (rviz_default_plugins)
-      Yaw: 2.189951181411743
+      Yaw: 0.734951376914978
     Saved: ~
 Window Geometry:
   Camera:

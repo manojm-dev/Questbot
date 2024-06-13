@@ -1,0 +1,1 @@
+/root/ws/src/robot_dd/launch/launch_sim2.launch.py
