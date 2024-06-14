@@ -1,10 +1,15 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-    <!-- Included Files -->
+    <!-- Including files -->
+
+    <!-- Include material colors -->
     <xacro:include filename="material.xacro"/>
+    <!-- Include inertial macros -->
     <xacro:include filename="macros/inertial.xacro"/>
+    <!-- Include wheel macros -->
     <xacro:include filename="macros/wheel.xacro"/>
+
 
     <!-- Define robot constants -->
 

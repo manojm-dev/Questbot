@@ -1,1 +1,0 @@
-/root/ws/src/build/robot_dd/ament_cmake_core/robot_ddConfig.cmake

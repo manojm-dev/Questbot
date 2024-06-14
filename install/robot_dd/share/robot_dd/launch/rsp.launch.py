@@ -1,1 +1,0 @@
-/root/ws/src/robot_dd/launch/rsp.launch.py

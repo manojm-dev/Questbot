@@ -4,22 +4,27 @@
   <!-- Robot Model-->
   <xacro:include filename="robot_model.xacro"/>
 
+  <!-- Control Plugins -->
+
   <!-- Gazebo Controller -->
-  <!-- <xacro:include filename="gazebo_control.xacro"/> -->
+  <xacro:include filename="control/gazebo_control.xacro"/>
 
   <!-- Gazebo2 Controller -->
   <!-- <xacro:include filename="gazebo2_control.xacro"/> -->
 
-  <!-- ROS2 Control -->
-  <!-- <xacro:include filename="ros2_control.xacro"/> -->
+
+  <!-- Sensor Plugins -->
+
+  <!-- IMU gazebo plugin -->
+  <xacro:include filename="sensors/gazebo_imu.xacro"/>
 
   <!-- Lidar 2D -->
-  <!-- <xacro:include filename="lidar.xacro"/> -->
+  <xacro:include filename="sensors/gazebo_lidar.xacro"/>
 
   <!-- Camera -->
   <!-- <xacro:include filename="camera.xacro"/> -->
 
   <!-- Depth Camera -->
-  <!-- <xacro:include filename="depth_camera.xacro"/> -->
+  <xacro:include filename="sensors/gazebo_depth_camera.xacro"/>
   
 </robot>
