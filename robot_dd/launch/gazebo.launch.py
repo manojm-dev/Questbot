@@ -14,10 +14,12 @@ def generate_launch_description():
     # Packages share directory
     pkg_share = FindPackageShare('robot_dd').find('robot_dd')
     gazebo_share = FindPackageShare('gazebo_ros').find('gazebo_ros')
+    nav2_bringup_share = FindPackageShare('nav2_bringup').find('nav2_bringup')
 
     # Files paths 
     default_model_path = os.path.join(pkg_share, 'description/robot.xacro')
     rviz_config_path = os.path.join(pkg_share, 'rviz/gazebo.rviz')
+    rqt_perspective_path = os.path.join(pkg_share, 'rviz/rqt_nodes.perspective')
     default_world_path = os.path.join(pkg_share, 'world/empty.world')
     ekf_config_path = os.path.join(pkg_share, 'config/ekf.yaml')
 
@@ -28,6 +30,7 @@ def generate_launch_description():
     # Launch configuration with file paths
     urdf_model = LaunchConfiguration('urdf_model')
     rviz_config = LaunchConfiguration('rviz_config')
+    rqt_perspective = LaunchConfiguration('rqt_perspective')
     world = LaunchConfiguration('world')
     efk_config = LaunchConfiguration('ekf_config')
 
@@ -56,6 +59,11 @@ def generate_launch_description():
             description='Absolute path of RViz config file'
         ),
         DeclareLaunchArgument(
+            name='rqt_perspective',
+            default_value=rqt_perspective_path,
+            description='Absolute path of Rqt gui perspective file'
+        ),
+        DeclareLaunchArgument(
             name='world',
             default_value=default_world_path, 
             description='Absolute path of gazebo WORLD file'
@@ -82,7 +90,7 @@ def generate_launch_description():
 
     # Localization
 
-    # Extended kalman filter
+    ## Extended kalman filter
     robot_localization_node = Node(
        package='robot_localization',
        executable='ekf_node',
@@ -106,7 +114,7 @@ def generate_launch_description():
         executable='spawn_entity.py',
         name="spawn_entity",
         output='screen',
-        arguments=['-topic', 'robot_description','-entity', 'robot_dd'],
+        arguments=['-topic', 'robot_description', '-entity',  'robot_dd', '-z', '0.5'],
         parameters=[{
             'use_sim_time': use_sim_time
             }]
@@ -114,7 +122,7 @@ def generate_launch_description():
 
     # Data visualizations
 
-    # Open RViz
+    ## Open RViz
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
@@ -126,6 +134,15 @@ def generate_launch_description():
             }]
     )
 
+    ## Open rqt visulaizer
+    rqt_node = Node(
+        package='rqt_gui',
+        executable='rqt_gui',
+        name='rqt_gui',
+        output='screen',
+        arguments=['--perspective-file', rqt_perspective]
+    )
+
 
     return LaunchDescription(
         declare_arguments + [
@@ -135,5 +152,6 @@ def generate_launch_description():
             spawn_entity_node,
             robot_localization_node,
             rviz_node,
+            rqt_node,
         ] 
     )

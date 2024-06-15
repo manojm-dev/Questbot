@@ -1,0 +1,225 @@
+{
+  "keys": {},
+  "groups": {
+    "mainwindow": {
+      "keys": {
+        "geometry": {
+          "repr(QByteArray.hex)": "QtCore.QByteArray(b'01d9d0cb00030000000000000000000000000555000002ff000000000000001c00000555000002ff00000000000000000556000000000000001c00000555000002ff')",
+          "type": "repr(QByteArray.hex)",
+          "pretty-print": "         U       U      V     U  "
+        },
+        "state": {
+          "repr(QByteArray.hex)": "QtCore.QByteArray(b'000000ff00000000fd000000010000000300000556000002bafc0100000005fb0000004c007200710074005f0074006f007000690063005f005f0054006f0070006900630050006c007500670069006e005f005f0031005f005f0054006f0070006900630057006900640067006500740100000000000000ea000000c800fffffffb00000060007200710074005f0069006d006100670065005f006f007600650072006c00610079003a003a0049006d006100670065004f007600650072006c00610079005f005f0031005f005f0049006d006100670065004f007600650072006c006100790100000386000000d00000000000000000fb0000002e007200710074005f006700610075006700650073005f005f004200610072005f005f0031005f005f004200610072010000045c000000fa0000000000000000fb0000004c007200710074005f00740066005f0074007200650065005f005f0052006f0073005400660054007200650065005f005f0031005f005f0052006f00730054006600540072006500650055006901000000f00000022f0000018b00fffffffb00000044007200710074005f00670072006100700068005f005f0052006f007300470072006100700068005f005f0031005f005f0052006f007300470072006100700068005500690100000325000002310000022d00ffffff000005560000000000000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')",
+          "type": "repr(QByteArray.hex)",
+          "pretty-print": "                 Lrqt_topic__TopicPlugin__1__TopicWidget          `rqt_image_overlay::ImageOverlay__1__ImageOverlay          .rqt_gauges__Bar__1__Bar          Lrqt_tf_tree__RosTfTree__1__RosTfTreeUi          Drqt_graph__RosGraph__1__RosGraphUi                            6MinimizedDockWidgetsToolbar        "
+        }
+      },
+      "groups": {
+        "toolbar_areas": {
+          "keys": {
+            "MinimizedDockWidgetsToolbar": {
+              "repr": "8",
+              "type": "repr"
+            }
+          },
+          "groups": {}
+        }
+      }
+    },
+    "pluginmanager": {
+      "keys": {
+        "running-plugins": {
+          "repr": "{'rqt_graph/RosGraph': [1], 'rqt_tf_tree/RosTfTree': [1], 'rqt_topic/TopicPlugin': [1]}",
+          "type": "repr"
+        }
+      },
+      "groups": {
+        "plugin__rqt_graph__RosGraph__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__RosGraphUi": {
+              "keys": {
+                "dock_widget_title": {
+                  "repr": "'Node Graph'",
+                  "type": "repr"
+                },
+                "dockable": {
+                  "repr": "True",
+                  "type": "repr"
+                },
+                "parent": {
+                  "repr": "None",
+                  "type": "repr"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "actionlib_check_box_state": {
+                  "repr": "True",
+                  "type": "repr"
+                },
+                "auto_fit_graph_check_box_state": {
+                  "repr": "True",
+                  "type": "repr"
+                },
+                "dead_sinks_check_box_state": {
+                  "repr": "True",
+                  "type": "repr"
+                },
+                "filter_line_edit_text": {
+                  "repr": "'/'",
+                  "type": "repr"
+                },
+                "graph_type_combo_box_index": {
+                  "repr": "2",
+                  "type": "repr"
+                },
+                "group_image_check_box_state": {
+                  "repr": "True",
+                  "type": "repr"
+                },
+                "group_tf_check_box_state": {
+                  "repr": "True",
+                  "type": "repr"
+                },
+                "hide_dynamic_reconfigure_check_box_state": {
+                  "repr": "True",
+                  "type": "repr"
+                },
+                "hide_tf_nodes_check_box_state": {
+                  "repr": "False",
+                  "type": "repr"
+                },
+                "highlight_connections_check_box_state": {
+                  "repr": "True",
+                  "type": "repr"
+                },
+                "leaf_topics_check_box_state": {
+                  "repr": "True",
+                  "type": "repr"
+                },
+                "namespace_cluster_spin_box_value": {
+                  "repr": "2",
+                  "type": "repr"
+                },
+                "quiet_check_box_state": {
+                  "repr": "True",
+                  "type": "repr"
+                },
+                "topic_filter_line_edit_text": {
+                  "repr": "'/'",
+                  "type": "repr"
+                },
+                "unreachable_check_box_state": {
+                  "repr": "True",
+                  "type": "repr"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_image_overlay::ImageOverlay__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ImageOverlay": {
+              "keys": {
+                "dock_widget_title": {
+                  "repr": "'Image Overlay'",
+                  "type": "repr"
+                },
+                "dockable": {
+                  "repr": "True",
+                  "type": "repr"
+                },
+                "parent": {
+                  "repr": "None",
+                  "type": "repr"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "overlay table": {
+                  "repr": "[]",
+                  "type": "repr"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_tf_tree__RosTfTree__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__RosTfTreeUi": {
+              "keys": {
+                "dock_widget_title": {
+                  "repr": "'TF Tree'",
+                  "type": "repr"
+                },
+                "dockable": {
+                  "repr": "True",
+                  "type": "repr"
+                },
+                "parent": {
+                  "repr": "None",
+                  "type": "repr"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "auto_fit_graph_check_box_state": {
+                  "repr": "True",
+                  "type": "repr"
+                },
+                "highlight_connections_check_box_state": {
+                  "repr": "True",
+                  "type": "repr"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_topic__TopicPlugin__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__TopicWidget": {
+              "keys": {
+                "dock_widget_title": {
+                  "repr": "'Topic Monitor'",
+                  "type": "repr"
+                },
+                "dockable": {
+                  "repr": "True",
+                  "type": "repr"
+                },
+                "parent": {
+                  "repr": "None",
+                  "type": "repr"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "tree_widget_header_state": {
+                  "repr(QByteArray.hex)": "QtCore.QByteArray(b'000000ff000000000000000100000000000000050100000000000000000000000620000000010000000500000064000004ba000000060101000100000000000000000600000064ffffffff0000008100000003000000060000018c00000001000000030000013c00000001000000030000006200000001000000030000002b0000000100000003000001650000000100000003000000000000000100000003000003e80000000064')",
+                  "type": "repr(QByteArray.hex)",
+                  "pretty-print": "                      d                                                            d"
+                }
+              },
+              "groups": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}
