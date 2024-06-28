@@ -12,7 +12,7 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
 
     # Packages share directory
-    pkg_share = FindPackageShare(package='robot_dd').find('robot_dd')
+    pkg_share = FindPackageShare(package='robot_description').find('robot_description')
 
     # File paths
     default_model_path = os.path.join(pkg_share, 'description/robot.xacro')
