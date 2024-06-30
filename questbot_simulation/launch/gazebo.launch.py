@@ -2,6 +2,7 @@ import os
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.conditions import IfCondition, UnlessCondition
 from launch.substitutions import Command, LaunchConfiguration
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
@@ -12,9 +13,8 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
 
     # Packages share directory
-    pkg_share = FindPackageShare('robot_dd').find('robot_dd')
+    pkg_share = FindPackageShare('questbot_description').find('questbot_description')
     gazebo_share = FindPackageShare('gazebo_ros').find('gazebo_ros')
-    nav2_bringup_share = FindPackageShare('nav2_bringup').find('nav2_bringup')
 
     # Files paths 
     default_model_path = os.path.join(pkg_share, 'description/robot.xacro')
@@ -114,7 +114,7 @@ def generate_launch_description():
         executable='spawn_entity.py',
         name="spawn_entity",
         output='screen',
-        arguments=['-topic', 'robot_description', '-entity',  'robot_dd', '-z', '0.5'],
+        arguments=['-topic', 'robot_description', '-entity',  'questbot_2wd', '-z', '0.5'],
         parameters=[{
             'use_sim_time': use_sim_time
             }]
@@ -131,7 +131,8 @@ def generate_launch_description():
         arguments=['-d', rviz_config],
         parameters=[{
             'use_sim_time': use_sim_time
-            }]
+            }],
+        condition=IfCondition(use_rviz)
     )
 
     ## Open rqt visulaizer

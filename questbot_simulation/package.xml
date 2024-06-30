@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>robot_simulation</name>
+  <name>questbot_simulation</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
   <maintainer email="manojmdev@proton.me">root</maintainer>
@@ -9,11 +9,12 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <depend>robot_description</depend>
+  <depend>questbot_description</depend>
 
-  <exec_depend>gazebo_ros</exec_depend>
-  <exec_depend>python3-numpy</exec_depend> <!-- for spawn entity -->
-  <exec_depend>ros_gz</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>         <!-- Classic Gazebo -->     
+  <exec_depend>python3-numpy</exec_depend>      <!-- for spawn entity -->
+  <exec_depend>ros_gz</exec_depend>             <!-- Gazebo -->
+  <exec_depend>robot_localization</exec_depend> <!-- For imu -->
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
