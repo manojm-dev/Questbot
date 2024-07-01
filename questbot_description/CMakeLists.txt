@@ -11,7 +11,7 @@ find_package(ament_cmake REQUIRED)
 find_package(xacro)
 
 install(
-  DIRECTORY launch description rviz 
+  DIRECTORY launch urdf rviz 
   DESTINATION share/${PROJECT_NAME}
 )
 

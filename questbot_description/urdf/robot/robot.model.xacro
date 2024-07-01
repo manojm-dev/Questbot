@@ -3,12 +3,14 @@
 
     <!-- Including files -->
 
-    <!-- Include material colors -->
-    <xacro:include filename="material.xacro"/>
+    <!-- Include rviz material colors -->
+    <xacro:include filename="materials.xacro"/>
+    <!-- Include gazebo material colors -->
+    <xacro:include filename="materials.gazebo.xacro"/>
     <!-- Include inertial macros -->
-    <xacro:include filename="macros/inertial.xacro"/>
+    <xacro:include filename="inertial_macro.xacro"/>
     <!-- Include wheel macros -->
-    <xacro:include filename="macros/wheel.xacro"/>
+    <xacro:include filename="wheel_macro.xacro"/>
 
 
     <!-- Define robot constants -->
@@ -33,9 +35,7 @@
         <geometry>
             <box size="${base_length} ${base_width} ${base_height}"/>
         </geometry>
-        <material name="Cyan">
-            <color rgba="0 1.0 1.0 1.0"/>
-        </material>
+        <material name="blue"/>
         </visual>
         <collision>
             <geometry>
@@ -60,9 +60,7 @@
         <geometry>
             <sphere radius="${(wheel_radius+wheel_zoff-(base_height/2))}"/>
         </geometry>
-        <material name="Cyan">
-            <color rgba="0 1.0 1.0 1.0"/>
-        </material>
+        <material name="grey"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>

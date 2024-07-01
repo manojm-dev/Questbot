@@ -17,7 +17,7 @@ def generate_launch_description():
     gazebo_share = FindPackageShare('gazebo_ros').find('gazebo_ros')
 
     # Files paths 
-    default_model_path = os.path.join(pkg_share, 'description/robot.xacro')
+    default_model_path = os.path.join(pkg_share, 'urdf/robot.urdf.xacro')
     rviz_config_path = os.path.join(pkg_share, 'rviz/gazebo.rviz')
     rqt_perspective_path = os.path.join(pkg_share, 'rviz/rqt_nodes.perspective')
     default_world_path = os.path.join(pkg_share, 'world/empty.world')

@@ -15,7 +15,7 @@ def generate_launch_description():
     pkg_share = FindPackageShare(package='qestbot_description').find('questbot_description')
 
     # File paths
-    default_model_path = os.path.join(pkg_share, 'description/robot.xacro')
+    default_model_path = os.path.join(pkg_share, 'urdf/robot.urdf.xacro')
     rviz_config_path = os.path.join(pkg_share, 'rviz/gazebo.rviz')
 
 
