@@ -21,7 +21,6 @@ def generate_launch_description():
     rviz_config_path = os.path.join(pkg_share, 'rviz/gazebo.rviz')
     rqt_perspective_path = os.path.join(pkg_share, 'rviz/rqt_nodes.perspective')
     default_world_path = os.path.join(pkg_share, 'world/empty.world')
-    ekf_config_path = os.path.join(pkg_share, 'config/ekf.yaml')
 
     # Launch configuration variables with default values 
     use_sim_time = LaunchConfiguration('use_sim_time')
@@ -32,7 +31,6 @@ def generate_launch_description():
     rviz_config = LaunchConfiguration('rviz_config')
     rqt_perspective = LaunchConfiguration('rqt_perspective')
     world = LaunchConfiguration('world')
-    efk_config = LaunchConfiguration('ekf_config')
 
 
     # Launch Arguments (used to modify at launch time)
@@ -41,11 +39,6 @@ def generate_launch_description():
             name='urdf_model',
             default_value=default_model_path,
             description='Absolute path of robot URDF file'
-        ),
-        DeclareLaunchArgument(
-            name='ekf_config',
-            default_value=ekf_config_path,
-            description='Extended kalman filer YAML config file'
         ),
         DeclareLaunchArgument(
             name='use_rviz',
@@ -87,19 +80,7 @@ def generate_launch_description():
             'robot_description': Command(['xacro ', urdf_model])
             }]
     )
-
-    # Localization
-
-    ## Extended kalman filter
-    robot_localization_node = Node(
-       package='robot_localization',
-       executable='ekf_node',
-       name='ekf_filter_node',
-       output='screen',
-       parameters=[
-           efk_config, 
-           {'use_sim_time': use_sim_time}]
-    )
+    
 
     # Open simulation environment
     start_gazebo_server = IncludeLaunchDescription(
@@ -119,6 +100,7 @@ def generate_launch_description():
             'use_sim_time': use_sim_time
             }]
     )
+
 
     # Data visualizations
 
@@ -151,7 +133,6 @@ def generate_launch_description():
             start_gazebo_server,
             start_gazebo_client,
             spawn_entity_node,
-            robot_localization_node,
             rviz_node,
             rqt_node,
         ] 
