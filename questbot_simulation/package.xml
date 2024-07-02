@@ -13,8 +13,9 @@
 
   <exec_depend>gazebo_ros</exec_depend>         <!-- Classic Gazebo -->     
   <exec_depend>python3-numpy</exec_depend>      <!-- for spawn entity -->
-  <exec_depend>ros_gz</exec_depend>             <!-- Gazebo -->
-  <exec_depend>robot_localization</exec_depend> <!-- For imu -->
+  <exec_depend>gazebo_ros_pkgs</exec_depend>
+  <exec_depend>ros_gz</exec_depend>             <!-- Gazebo Sim-->
+
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

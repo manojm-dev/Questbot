@@ -1,7 +1,11 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <!-- Wheels -->
+    <!-- Include inertial macros -->
+    <xacro:include filename="inertial_macros.xacro"/>
+    
+
+    <!-- Wheels Macro -->
     <xacro:macro name="wheel" params="prefix x_reflect y_reflect">
         <link name="${prefix}_link">
         <visual>
@@ -28,4 +32,9 @@
         </joint>
     </xacro:macro>
 
+    <!-- Wheels -->
+    <xacro:wheel prefix="left_wheel" x_reflect="-1" y_reflect="1" />
+    <xacro:wheel prefix="right_wheel" x_reflect="-1" y_reflect="-1" />
+
+    
 </robot>

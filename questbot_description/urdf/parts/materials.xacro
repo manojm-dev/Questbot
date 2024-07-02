@@ -4,15 +4,23 @@
   <!-- Rviz Colours -->
 
   <material name="black">
-    <color rgba="0.0 0.0 0.0 1.0"/>
+    <color rgba="0 0 0 1"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1 1 1 1"/>
   </material>
 
   <material name="blue">
-    <color rgba="0.0 0.0 0.8 1.0"/>
+    <color rgba="0.0 0.0 0.8 1"/>
+  </material>
+
+  <material name="lightblue">
+    <color rgba="0.6 0.8 1 0.9"/>
   </material>
 
   <material name="green">
-    <color rgba="0.0 0.8 0.0 1.0"/>
+    <color rgba="0.0 0.8 0.0 1"/>
   </material>
 
   <material name="grey">

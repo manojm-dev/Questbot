@@ -1,30 +1,13 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot_2wd">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="questbot_2wd">
  
-  <!-- Robot Model-->
-  <xacro:include filename="robot/robot.model.xacro"/>
+    <!-- Robot Body-->
+    <xacro:include filename="parts/body.urdf.xacro"/>
 
-  <!-- Control Plugins -->
+    <!-- Robot Wheels -->
+    <xacro:include filename="parts/wheel.xacro"/>
 
-  <!-- Gazebo Controller -->
-  <xacro:include filename="robot/control/gazebo_control.xacro"/>
+    <!-- Gazebo Definitions -->
+    <xacro:include filename="gazebo.urdf.xacro"/>
 
-  <!-- Gazebo2 Controller -->
-  <!-- <xacro:include filename="questbot/control/gazebo2_control.xacro"/> -->
-
-
-  <!-- Sensor Plugins -->
-
-  <!-- IMU gazebo plugin -->
-  <!-- <xacro:include filename="sensors/gazebo_imu.xacro"/> -->
-
-  <!-- Lidar 2D -->
-  <!-- <xacro:include filename="sensors/gazebo_lidar.xacro"/> -->
-
-  <!-- Camera -->
-  <!-- <xacro:include filename="camera.xacro"/> -->
-
-  <!-- Depth Camera -->
-  <!-- <xacro:include filename="sensors/gazebo_depth_camera.xacro"/> -->
-  
 </robot>

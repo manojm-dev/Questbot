@@ -3,14 +3,14 @@
 
     <!-- Including files -->
 
+    <!-- Include inertial macros -->
+    <xacro:include filename="inertial_macros.xacro"/>
+    
+    <!-- Visual -->
+
     <!-- Include rviz material colors -->
     <xacro:include filename="materials.xacro"/>
-    <!-- Include gazebo material colors -->
-    <xacro:include filename="materials.gazebo.xacro"/>
-    <!-- Include inertial macros -->
-    <xacro:include filename="inertial_macro.xacro"/>
-    <!-- Include wheel macros -->
-    <xacro:include filename="wheel_macro.xacro"/>
+
 
 
     <!-- Define robot constants -->
@@ -29,13 +29,14 @@
     <xacro:property name="caster_xoff" value="0.14"/>
 
 
+
     <!-- Robot Base -->
     <link name="base_link">
         <visual>
         <geometry>
             <box size="${base_length} ${base_width} ${base_height}"/>
         </geometry>
-        <material name="blue"/>
+        <material name="cyan"/>
         </visual>
         <collision>
             <geometry>
@@ -45,6 +46,7 @@
         <xacro:box_inertia mass="15" width="${base_width}" length="${base_length}" height="${base_height}"/>
     </link>
 
+
     <!-- Robot Footprint -->
     <link name="base_footprint"/>
 
@@ -53,6 +55,7 @@
         <child link="base_footprint"/>
         <origin xyz="0.0 0.0 ${-(wheel_radius+wheel_zoff)}" rpy="0 0 0"/>
     </joint>
+
 
     <!-- Caster Wheel -->
     <link name="front_caster">
@@ -77,8 +80,5 @@
         <origin xyz="${caster_xoff} 0.0 ${-(base_height/2)}" rpy="0 0 0"/>
     </joint>
 
-    <!-- Wheels -->
-    <xacro:wheel prefix="left_wheel" x_reflect="-1" y_reflect="1" />
-    <xacro:wheel prefix="right_wheel" x_reflect="-1" y_reflect="-1" />
 
 </robot>
