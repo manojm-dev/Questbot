@@ -61,7 +61,17 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         left_wheel_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        lidar_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -90,7 +100,11 @@ Visualization Manager:
           Value: true
         front_caster:
           Value: true
+        imu_link:
+          Value: true
         left_wheel_link:
+          Value: true
+        lidar_link:
           Value: true
         right_wheel_link:
           Value: true
@@ -105,7 +119,11 @@ Visualization Manager:
             {}
           front_caster:
             {}
+          imu_link:
+            {}
           left_wheel_link:
+            {}
+          lidar_link:
             {}
           right_wheel_link:
             {}
@@ -114,7 +132,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_link
+    Fixed Frame: base_footprint
     Frame Rate: 30
   Name: root
   Tools:
@@ -132,7 +150,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 0.9591646194458008
+      Distance: 1.3278471231460571
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -147,10 +165,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.9103978276252747
+      Pitch: 0.42039763927459717
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.690396308898926
+      Yaw: 5.788594722747803
     Saved: ~
 Window Geometry:
   Displays:

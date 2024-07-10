@@ -16,32 +16,35 @@ def generate_launch_description():
 
     # File paths
     default_model_path = os.path.join(pkg_share, 'urdf/robot.urdf.xacro')
-    rviz_config_path = os.path.join(pkg_share, 'rviz/gazebo.rviz')
+    rviz_config_path = os.path.join(pkg_share, 'config/display.rviz')
+    rqt_perspective_path = os.path.join(pkg_share, 'config/display.perspective')
 
 
     # Launch configuration variables with default values 
     use_sim_time = LaunchConfiguration('use_sim_time')
+    use_jsp = LaunchConfiguration('use_jsp')
     jsp_gui = LaunchConfiguration('jsp_gui')
     use_rviz = LaunchConfiguration('use_rviz')
+    use_rqt = LaunchConfiguration('use_rqt')
 
     # Launch configuration with file paths
     urdf_model = LaunchConfiguration('urdf_model')
     rviz_config = LaunchConfiguration('rviz_config')
+    rqt_perspective = LaunchConfiguration('rqt_perspective')
 
 
     # Launch Arguments (used to modify at launch time)
     declare_arguments = [
         DeclareLaunchArgument(
+            name='urdf_model',
+            default_value=default_model_path,
+            description='Absolute path of robot URDF file'
+        ),
+        DeclareLaunchArgument(
             name='use_sim_time', 
             default_value='false',
             choices=['true', 'false'],
             description='Use Simulation(Gazebo) Clock'
-        ),
-        DeclareLaunchArgument(
-            name='jsp_gui', 
-            default_value='false',
-            choices=['true', 'false'],
-            description='Flag to enable joint_state_publisher_gui'
         ),
         DeclareLaunchArgument(
             name='use_rviz',
@@ -50,19 +53,37 @@ def generate_launch_description():
             description='Whether to open RViz or Not'
         ),
         DeclareLaunchArgument(
-            name='urdf_model',
-            default_value=default_model_path,
-            description='Absolute path of robot URDF file'
-        ),
-        DeclareLaunchArgument(
             name='rviz_config',
             default_value=rviz_config_path,
             description='Absolute path of RViz config file'
-        )
+        ),
+        DeclareLaunchArgument(
+            name='use_jsp', 
+            default_value='false',
+            choices=['true', 'false'],
+            description='Flag to enable joint_state_publisher'
+        ),
+        DeclareLaunchArgument(
+            name='jsp_gui', 
+            default_value='false',
+            choices=['true', 'false'],
+            description='Flag to enable joint_state_publisher_gui'
+        ),
+        DeclareLaunchArgument(
+            name='use_rqt',
+            default_value='false',
+            choices=['true', 'false'],
+            description='Flag to enable rqt gui'
+        ),
+        DeclareLaunchArgument(
+            name='rqt_perspective',
+            default_value=rqt_perspective_path,
+            description='Absolute path of Rqt gui perspective file'
+        ),
     ]
 
 
-    # Nodes
+    # Start robot state publisher
     robot_state_publisher_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
@@ -70,29 +91,52 @@ def generate_launch_description():
         output='screen',
         parameters=[{
             'use_sim_time': use_sim_time,
-            'robot_description': Command(['xacro ', urdf_model]) 
+            'robot_description': Command(['xacro ', urdf_model])
             }]
     )
+
+    # Joint state publisher
     joint_state_publisher_node = Node(
         package='joint_state_publisher',
         executable='joint_state_publisher',
         name='joint_state_publisher',
-        condition=UnlessCondition(jsp_gui)
+        condition=IfCondition(use_jsp)
     )
+
+    # Joint state publisher gui
     joint_state_publisher_gui_node = Node(
         package='joint_state_publisher_gui',
         executable='joint_state_publisher_gui',
         name='joint_state_publisher_gui',
         condition=IfCondition(jsp_gui)
     )
+
+
+    # Data visualizations
+
+    ## Open RViz
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
         name='rviz2',
         output='screen',
         arguments=['-d', rviz_config],
+        parameters=[{
+            'use_sim_time': use_sim_time
+            }],
         condition=IfCondition(use_rviz)
     )
+
+    ## Open rqt visulaizer
+    rqt_node = Node(
+        package='rqt_gui',
+        executable='rqt_gui',
+        name='rqt_gui',
+        output='screen',
+        arguments=['--perspective-file', rqt_perspective],
+        condition=IfCondition(use_rqt)
+    )
+
 
 
     return LaunchDescription(
@@ -100,6 +144,7 @@ def generate_launch_description():
         joint_state_publisher_node,
         joint_state_publisher_gui_node,
         robot_state_publisher_node,
-        rviz_node
+        rviz_node,
+        rqt_node
         ]
     )

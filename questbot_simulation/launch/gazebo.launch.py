@@ -13,74 +13,46 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
 
     # Packages share directory
-    pkg_share = FindPackageShare('questbot_description').find('questbot_description')
+    pkg_share = FindPackageShare('questbot_simulation').find('questbot_simulation')
+    description_share = FindPackageShare('questbot_description').find('questbot_description')
     gazebo_share = FindPackageShare('gazebo_ros').find('gazebo_ros')
 
     # Files paths 
-    default_model_path = os.path.join(pkg_share, 'urdf/robot.urdf.xacro')
-    rviz_config_path = os.path.join(pkg_share, 'rviz/gazebo.rviz')
-    rqt_perspective_path = os.path.join(pkg_share, 'rviz/rqt_nodes.perspective')
-    default_world_path = os.path.join(pkg_share, 'world/empty.world')
+    default_world_path = os.path.join(pkg_share, 'world/cones.world')
 
     # Launch configuration variables with default values 
     use_sim_time = LaunchConfiguration('use_sim_time')
-    use_rviz = LaunchConfiguration('use_rviz')
 
     # Launch configuration with file paths
-    urdf_model = LaunchConfiguration('urdf_model')
-    rviz_config = LaunchConfiguration('rviz_config')
-    rqt_perspective = LaunchConfiguration('rqt_perspective')
     world = LaunchConfiguration('world')
 
 
     # Launch Arguments (used to modify at launch time)
     declare_arguments = [
         DeclareLaunchArgument(
-            name='urdf_model',
-            default_value=default_model_path,
-            description='Absolute path of robot URDF file'
-        ),
-        DeclareLaunchArgument(
-            name='use_rviz',
-            default_value='true',
+            name='use_sim_time', 
+            default_value='false',
             choices=['true', 'false'],
-            description='Whether to open RViz or Not'
-        ),
-        DeclareLaunchArgument(
-            name='rviz_config',
-            default_value=rviz_config_path,
-            description='Absolute path of RViz config file'
-        ),
-        DeclareLaunchArgument(
-            name='rqt_perspective',
-            default_value=rqt_perspective_path,
-            description='Absolute path of Rqt gui perspective file'
+            description='Use Simulation(Gazebo) Clock'
         ),
         DeclareLaunchArgument(
             name='world',
             default_value=default_world_path, 
             description='Absolute path of gazebo WORLD file'
         ),
-        DeclareLaunchArgument(
-            name='use_sim_time', 
-            default_value='false',
-            choices=['true', 'false'],
-            description='Use Simulation(Gazebo) Clock'
-        )
     ]
 
-    # Start robot state publisher
-    robot_state_publisher_node = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        name='robot_state_publisher',
-        output='screen',
-        parameters=[{
-            'use_sim_time': use_sim_time,
-            'robot_description': Command(['xacro ', urdf_model])
-            }]
+    # Launch display configuration
+    start_description = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(description_share, 'launch', 'display.launch.py')),
+        launch_arguments={'use_sim_time'    : 'true',
+                          'use_jsp'         : 'false',
+                          'jsp_gui'         : 'false',
+                          'use_rviz'        : 'true',
+                          'use_rqt'         : 'false' 
+                          }.items()
     )
-    
+
 
     # Open simulation environment
     start_gazebo_server = IncludeLaunchDescription(
@@ -102,38 +74,11 @@ def generate_launch_description():
     )
 
 
-    # Data visualizations
-
-    ## Open RViz
-    rviz_node = Node(
-        package='rviz2',
-        executable='rviz2',
-        name='rviz2',
-        output='screen',
-        arguments=['-d', rviz_config],
-        parameters=[{
-            'use_sim_time': use_sim_time
-            }],
-        condition=IfCondition(use_rviz)
-    )
-
-    ## Open rqt visulaizer
-    rqt_node = Node(
-        package='rqt_gui',
-        executable='rqt_gui',
-        name='rqt_gui',
-        output='screen',
-        arguments=['--perspective-file', rqt_perspective]
-    )
-
-
     return LaunchDescription(
         declare_arguments + [
-            robot_state_publisher_node,
+            start_description,
             start_gazebo_server,
             start_gazebo_client,
-            spawn_entity_node,
-            rviz_node,
-            rqt_node,
+            spawn_entity_node
         ] 
     )
