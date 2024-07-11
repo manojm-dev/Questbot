@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <!-- Classic Gazebo Plugins -->
+    <!-- Classic Gazebo -->
 
     <!-- Controller -->
     <xacro:include filename="control/gazebo_control.xacro"/>
@@ -25,22 +25,5 @@
     <!-- Controller -->
     <!-- <xacro:include filename="control/gazebo2_control.xacro"/> -->
 
-    <gazebo reference="base_link">
-        <material>Gazebo/Turquoise</material>
-    </gazebo>
-
-     <gazebo reference="front_caster">
-        <material>Gazebo/Grey</material>
-        <mu1 value="0.001"/>
-        <mu2 value="0.001"/>
-    </gazebo>
-
-    <gazebo reference="left_wheel_link">
-        <material>Gazebo/Grey</material>
-    </gazebo>
-
-    <gazebo reference="right_wheel_link">
-        <material>Gazebo/Grey</material>
-    </gazebo>  
     
 </robot>

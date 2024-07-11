@@ -59,7 +59,7 @@ def generate_launch_description():
         ),
         DeclareLaunchArgument(
             name='use_jsp', 
-            default_value='false',
+            default_value='true',
             choices=['true', 'false'],
             description='Flag to enable joint_state_publisher'
         ),

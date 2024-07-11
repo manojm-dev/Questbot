@@ -1,16 +1,15 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
+
     <!-- Including files -->
 
-    <!-- Include inertial macros -->
-    <xacro:include filename="inertial_macros.xacro"/>
+    <!-- Inertial -->
+    <xacro:include filename="macro/inertial.xacro"/>
+
+    <!-- Wheel -->
+    <xacro:include filename="macro/wheel.xacro"/>
     
-    <!-- Visual -->
-
-    <!-- Include rviz material colors -->
-    <xacro:include filename="materials.xacro"/>
-
 
 
     <!-- Define robot constants -->
@@ -19,12 +18,14 @@
     <xacro:property name="base_width" value="0.31"/>
     <xacro:property name="base_length" value="0.42"/>
     <xacro:property name="base_height" value="0.18"/>
+
     <!-- Robot wheels constants -->
     <xacro:property name="wheel_radius" value="0.10"/>
     <xacro:property name="wheel_width" value="0.04"/>
     <xacro:property name="wheel_ygap" value="0.025"/>
     <xacro:property name="wheel_zoff" value="0.05"/>
     <xacro:property name="wheel_xoff" value="0.12"/>
+    
     <!-- Castor wheels constats -->
     <xacro:property name="caster_xoff" value="0.14"/>
 
@@ -33,18 +34,26 @@
     <!-- Robot Base -->
     <link name="base_link">
         <visual>
-        <geometry>
-            <box size="${base_length} ${base_width} ${base_height}"/>
-        </geometry>
-        <material name="cyan"/>
+            <geometry>
+                <box size="${base_length} ${base_width} ${base_height}"/>
+            </geometry>
+            <material name="turquoise">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
         </visual>
+
         <collision>
             <geometry>
                 <box size="${base_length} ${base_width} ${base_height}"/>
             </geometry>
         </collision>
+
         <xacro:box_inertia mass="15" width="${base_width}" length="${base_length}" height="${base_height}"/>
     </link>
+
+    <gazebo reference="base_link">
+        <material>Gazebo/Turquoise</material>
+    </gazebo>  
 
 
     <!-- Robot Footprint -->
@@ -60,17 +69,21 @@
     <!-- Caster Wheel -->
     <link name="front_caster">
         <visual>
-        <geometry>
-            <sphere radius="${(wheel_radius+wheel_zoff-(base_height/2))}"/>
-        </geometry>
-        <material name="grey"/>
+            <geometry>
+                <sphere radius="${(wheel_radius+wheel_zoff-(base_height/2))}"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.5 0.5 0.5 1.0"/>
+            </material>
         </visual>
+
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
                 <sphere radius="${(wheel_radius+wheel_zoff-(base_height/2))}"/>
             </geometry>
         </collision>
+
         <xacro:sphere_inertia mass="0.5" radius="${(wheel_radius+wheel_zoff-(base_height/2))}"/>
     </link>
 
@@ -79,6 +92,17 @@
         <child link="front_caster"/>
         <origin xyz="${caster_xoff} 0.0 ${-(base_height/2)}" rpy="0 0 0"/>
     </joint>
+
+    <gazebo reference="front_caster">
+        <material>Gazebo/Grey</material>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
+    </gazebo>
+
+
+    <!-- Wheels -->
+    <xacro:wheel prefix="left_wheel" x_reflect="-1" y_reflect="1" />
+    <xacro:wheel prefix="right_wheel" x_reflect="-1" y_reflect="-1" />
 
 
 </robot>

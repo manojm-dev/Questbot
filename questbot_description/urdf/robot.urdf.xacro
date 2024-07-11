@@ -2,10 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="questbot_2wd">
  
     <!-- Robot Body-->
-    <xacro:include filename="parts/body.urdf.xacro"/>
-
-    <!-- Robot Wheels -->
-    <xacro:include filename="parts/wheel.xacro"/>
+    <xacro:include filename="body.urdf.xacro"/>
 
     <!-- Gazebo Definitions -->
     <xacro:include filename="gazebo.urdf.xacro"/>
