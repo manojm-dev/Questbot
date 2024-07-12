@@ -22,6 +22,8 @@ def generate_launch_description():
 
     # Launch configuration variables with default values 
     use_sim_time = LaunchConfiguration('use_sim_time')
+    use_gazebo = LaunchConfiguration('use_gazebo')
+    use_gzsim = LaunchConfiguration('use_gzsim')
     use_jsp = LaunchConfiguration('use_jsp')
     jsp_gui = LaunchConfiguration('jsp_gui')
     use_rviz = LaunchConfiguration('use_rviz')
@@ -45,6 +47,18 @@ def generate_launch_description():
             default_value='false',
             choices=['true', 'false'],
             description='Use Simulation(Gazebo) Clock'
+        ),
+        DeclareLaunchArgument(
+            name='use_gazebo', 
+            default_value='true',
+            choices=['true', 'false'],
+            description='Use Gazebo classic'
+        ),
+        DeclareLaunchArgument(
+            name='use_gzsim', 
+            default_value='false',
+            choices=['true', 'false'],
+            description='Use Gazebo Sim'
         ),
         DeclareLaunchArgument(
             name='use_rviz',
@@ -91,7 +105,10 @@ def generate_launch_description():
         output='screen',
         parameters=[{
             'use_sim_time': use_sim_time,
-            'robot_description': Command(['xacro ', urdf_model])
+            'robot_description': Command(['xacro ', urdf_model,
+                                          ' use_gazebo:=', use_gazebo,
+                                          ' use_gzsim:=', use_gzsim
+                                          ])
             }]
     )
 

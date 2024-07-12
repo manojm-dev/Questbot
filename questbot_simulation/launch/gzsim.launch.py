@@ -3,7 +3,7 @@ import os
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.conditions import IfCondition, UnlessCondition
-from launch.substitutions import Command, LaunchConfiguration
+from launch.substitutions import Command, LaunchConfiguration, FindExecutable
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 from launch_ros.actions import Node
@@ -15,7 +15,7 @@ def generate_launch_description():
     # Packages share directory
     pkg_share = FindPackageShare('questbot_simulation').find('questbot_simulation')
     description_share = FindPackageShare('questbot_description').find('questbot_description')
-    gazebo_share = FindPackageShare('gazebo_ros').find('gazebo_ros')
+    pkg_ros_gz_sim = FindPackageShare('ros_gz_sim').find('ros_gz_sim')
 
     # Files paths 
     default_world_path = os.path.join(pkg_share, 'world/cones.world')
@@ -46,8 +46,8 @@ def generate_launch_description():
     start_description = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(description_share, 'launch', 'display.launch.py')),
         launch_arguments={'use_sim_time'    : 'true',
-                          'use_gazebo'      : 'true',
-                          'use_gzsim'       : 'false',
+                          'use_gazebo'      : 'false',
+                          'use_gzsim'       : 'true',
                           'use_jsp'         : 'false',
                           'jsp_gui'         : 'false',
                           'use_rviz'        : 'true',
@@ -57,30 +57,27 @@ def generate_launch_description():
 
 
     # Open simulation environment
-    start_gazebo_server = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(gazebo_share, 'launch', 'gzserver.launch.py')), 
-        launch_arguments={'world': world}.items()
-    )
-    start_gazebo_client = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(gazebo_share, 'launch', 'gzclient.launch.py'))
-    )
-    spawn_entity_node = Node(
-        package='gazebo_ros', 
-        executable='spawn_entity.py',
-        name="spawn_entity",
-        output='screen',
-        arguments=['-topic', 'robot_description', '-entity',  'questbot_2wd', '-z', '0.5'],
-        parameters=[{
-            'use_sim_time': use_sim_time
-            }]
+    gz_sim = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')),
+        launch_arguments={'gz_args':'',
+                          'worlds': world}.items()
     )
 
+    # Bridge ROS topics and Gazebo messages for establishing communication
+    bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        parameters=[{
+            'config_file': os.path.join(pkg_share, 'config', 'ros_gz_bridge.yaml'),
+            'qos_overrides./tf_static.publisher.durability': 'transient_local',
+        }],
+        output='screen'
+    )
 
     return LaunchDescription(
         declare_arguments + [
             start_description,
-            start_gazebo_server,
-            start_gazebo_client,
-            spawn_entity_node
+            gz_sim,
+            bridge
         ] 
     )

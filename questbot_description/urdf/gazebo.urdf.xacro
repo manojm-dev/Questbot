@@ -1,29 +1,35 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+    <xacro:property name="use_gazebo" value="1"/>
+    <xacro:property name="use_gzsim" value="0"/>
+    
+
     <!-- Classic Gazebo -->
+    <xacro:if value="$(arg use_gazebo)">    
 
-    <!-- Controller -->
-    <xacro:include filename="control/gazebo_control.xacro"/>
+        <!-- Controller -->
+        <xacro:include filename="control/gazebo_control.xacro"/>
 
-    <!-- IMU gazebo plugin -->
-    <xacro:include filename="sensors/gazebo_imu.xacro"/>
+        <!-- IMU gazebo plugin -->
+        <xacro:include filename="sensors/gazebo_imu.xacro"/>
 
-    <!-- Lidar 2D -->
-    <xacro:include filename="sensors/gazebo_lidar.xacro"/>
+        <!-- Lidar 2D -->
+        <xacro:include filename="sensors/gazebo_lidar.xacro"/>
 
-    <!-- Camera -->
-    <!-- <xacro:include filename="sensors/gazebo_camera.xacro"/> -->
+        <!-- Camera -->
+        <!-- <xacro:include filename="sensors/gazebo_camera.xacro"/> -->
 
-    <!-- Depth Camera -->
-    <!-- <xacro:include filename="sensors/gazebo_depth_camera.xacro"/> -->
+        <!-- Depth Camera -->
+        <!-- <xacro:include filename="sensors/gazebo_depth_camera.xacro"/> -->
+    </xacro:if>
 
-    
+    <!-- Gazebo Sim Plugins -->  
+    <xacro:if value="$(arg use_gzsim)">
+        
+        <!-- Controller -->
+        <xacro:include filename="control/gzsim_control.xacro"/>
 
-    <!-- Gazebo Sim Plugins-->  
+    </xacro:if>
 
-    <!-- Controller -->
-    <!-- <xacro:include filename="control/gazebo2_control.xacro"/> -->
-
-    
 </robot>
