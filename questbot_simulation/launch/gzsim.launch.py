@@ -1,7 +1,7 @@
 import os
 
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, ExecuteProcess
 from launch.conditions import IfCondition, UnlessCondition
 from launch.substitutions import Command, LaunchConfiguration, FindExecutable
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -18,7 +18,7 @@ def generate_launch_description():
     pkg_ros_gz_sim = FindPackageShare('ros_gz_sim').find('ros_gz_sim')
 
     # Files paths 
-    default_world_path = os.path.join(pkg_share, 'world/cones.world')
+    default_world_path = os.path.join(pkg_share, 'empty.sdf')
 
     # Launch configuration variables with default values 
     use_sim_time = LaunchConfiguration('use_sim_time')
@@ -42,29 +42,24 @@ def generate_launch_description():
         ),
     ]
 
-    # Launch display configuration
-    start_description = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(description_share, 'launch', 'display.launch.py')),
+    # Robot State Publisher
+    robot_state_publisher = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(description_share, 'launch', 'rsp.launch.py')),
         launch_arguments={'use_sim_time'    : 'true',
                           'use_gazebo'      : 'false',
                           'use_gzsim'       : 'true',
-                          'use_jsp'         : 'false',
-                          'jsp_gui'         : 'false',
-                          'use_rviz'        : 'true',
-                          'use_rqt'         : 'false' 
                           }.items()
     )
 
-
-    # Open simulation environment
-    gz_sim = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')),
-        launch_arguments={'gz_args':'',
-                          'worlds': world}.items()
+    # Start Simulation Environment
+    gz_sim = ExecuteProcess(
+        cmd=['ign', 'gazebo', '-v', '4', '-r', 'empty.sdf'],
+        output='screen'
     )
 
     # Bridge ROS topics and Gazebo messages for establishing communication
-    bridge = Node(
+    gz_bridge = Node(
+        name="ros_gz_bridge",
         package='ros_gz_bridge',
         executable='parameter_bridge',
         parameters=[{
@@ -76,8 +71,8 @@ def generate_launch_description():
 
     return LaunchDescription(
         declare_arguments + [
-            start_description,
+            robot_state_publisher,
             gz_sim,
-            bridge
+            gz_bridge
         ] 
     )

@@ -42,16 +42,12 @@ def generate_launch_description():
         ),
     ]
 
-    # Launch display configuration
-    start_description = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(description_share, 'launch', 'display.launch.py')),
-        launch_arguments={'use_sim_time'    : 'true',
+    # Robot state publisher
+    robot_state_publisher = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(description_share, 'launch', 'rsp.launch.py')),
+        launch_arguments={'use_sim_time'    : use_sim_time,
                           'use_gazebo'      : 'true',
                           'use_gzsim'       : 'false',
-                          'use_jsp'         : 'false',
-                          'jsp_gui'         : 'false',
-                          'use_rviz'        : 'true',
-                          'use_rqt'         : 'false' 
                           }.items()
     )
 
@@ -69,7 +65,7 @@ def generate_launch_description():
         executable='spawn_entity.py',
         name="spawn_entity",
         output='screen',
-        arguments=['-topic', 'robot_description', '-entity',  'questbot_2wd', '-z', '0.5'],
+        arguments=['-topic', 'robot_description', '-entity',  'questbot_2wd', '-z', '0.5', '-x', '0', '-y', '0'],
         parameters=[{
             'use_sim_time': use_sim_time
             }]
@@ -78,7 +74,7 @@ def generate_launch_description():
 
     return LaunchDescription(
         declare_arguments + [
-            start_description,
+            robot_state_publisher,
             start_gazebo_server,
             start_gazebo_client,
             spawn_entity_node
