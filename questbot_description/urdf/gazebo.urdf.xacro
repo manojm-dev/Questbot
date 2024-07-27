@@ -8,7 +8,7 @@
     <xacro:property name="use_gzsim" value="0" />
 
     <!-- Choose whether to publish odom from controller -->
-    <xacro:property name="publish_odom_tf" value="true"/>
+    <xacro:property name="publish_odom_tf" value="false"/>
 
 
     <!-- Classic Gazebo -->

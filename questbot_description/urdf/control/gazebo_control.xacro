@@ -20,6 +20,7 @@
             <max_wheel_acceleration>1.0</max_wheel_acceleration>
 
             <!-- output -->
+            <updateRate>100</updateRate>
             <publish_odom>true</publish_odom>
             <publish_odom_tf>${publish_odom_tf}</publish_odom_tf>
             <publish_wheel_tf>true</publish_wheel_tf>
