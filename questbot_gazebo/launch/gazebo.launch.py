@@ -13,7 +13,7 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
 
     # Packages share directory
-    pkg_share = FindPackageShare('questbot_simulation').find('questbot_simulation')
+    pkg_share = FindPackageShare('questbot_gazebo').find('questbot_gazebo')
     description_share = FindPackageShare('questbot_description').find('questbot_description')
     gazebo_share = FindPackageShare('gazebo_ros').find('gazebo_ros')
 
@@ -52,7 +52,7 @@ def generate_launch_description():
     )
 
 
-    # Open simulation environment
+    # Open gazebo environment
     start_gazebo_server = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(gazebo_share, 'launch', 'gzserver.launch.py')), 
         launch_arguments={'world': world}.items()
